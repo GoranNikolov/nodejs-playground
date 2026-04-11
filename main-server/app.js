@@ -10,6 +10,7 @@ console.log(routes.someText);
  * The handler function processes all incoming HTTP requests
  * and determines how to respond based on the URL and method
  */
+console.log("Hello world");
 const server = http.createServer(routes.handler);
 
 server.listen(3000);
