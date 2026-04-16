@@ -8,7 +8,8 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\main-server\\app.js",
+            "program": "${workspaceFolder}\\project-express\\app.js",
+            "cwd": "${workspaceFolder}\\project-express",
             "restart": true,
             "runtimeExecutable": "nodemon",
             "console": "integratedTerminal"
