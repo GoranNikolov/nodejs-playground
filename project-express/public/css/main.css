@@ -197,6 +197,20 @@ form {
   color: white;
 }
 
+.cart__item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cart__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
 @media (min-width: 768px) {
   .main-header__nav {
     display: flex;
