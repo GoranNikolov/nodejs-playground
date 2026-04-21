@@ -9,14 +9,18 @@
             <% } else { %>
                 <ul>
                     <% orders.forEach(order => { %>
-                    <li>#<%= order.id %></li>
-                    <ul>
-                        <% order.products.forEach(product => { %>
-                            <li>
-                                <%= product.title %> (<%= product.orderItem.quantity %>)
-                            </li>
-                        <% }) %>
-                    </ul>
+                    <li>
+                        <h1>Order #<%= order.id %></h1>
+                        <p>Total: $<%= order.total %></p>
+                        <p>Ship to: <%= order.name %>, <%= order.street %>, <%= order.city %>, <%= order.state %> <%= order.zip %></p>
+                        <ul>
+                            <% order.products.forEach(product => { %>
+                                <li>
+                                    <%= product.title %> (<%= product.orderItem.quantity %>)
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </li>
                     <% }) %>
                 </ul>
             <% } %>

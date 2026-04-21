@@ -15,10 +15,12 @@
                     <div class="cart__item-controls">
                         <form action="/cart" method="POST">
                             <input type="hidden" value="<%= p.id %>" name="productId">
+                            <input type="hidden" value="/checkout" name="redirectPath">
                             <button class="btn" type="submit">+</button>
                         </form>
-                        <form action="/cart-delete-item" method="POST">
+                        <form action="/cart-decrement-item" method="POST">
                             <input type="hidden" value="<%= p.id %>" name="productId">
+                            <input type="hidden" value="/checkout" name="redirectPath">
                             <button class="btn danger" type="submit">-</button>
                         </form>
                     </div>
