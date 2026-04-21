@@ -109,7 +109,7 @@ exports.deleteCartProduct = (req, res, next) => {
       return product.cartItem.destroy();
     })
     .then((result) => {
-      res.redirect("/admin/products");
+      res.redirect("/cart");
     })
 
     .catch((err) => console.log(err));
