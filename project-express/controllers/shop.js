@@ -159,8 +159,26 @@ exports.getOrders = (req, res, next) => {
 };
 
 exports.getCheckout = (req, res, next) => {
-  res.render("shop/checkout", {
-    path: "/checkout",
-    pageTitle: "Checkout",
-  });
+  let products;
+  let total = 0;
+  req.user
+    .getCart()
+    .then((cart) => {
+      return cart.getProducts();
+    })
+    .then((prods) => {
+      products = prods;
+      prods.forEach((p) => {
+        total += p.cartItem.quantity * p.price;
+      });
+      res.render("shop/checkout", {
+        path: "/checkout",
+        pageTitle: "Checkout",
+        products: products,
+        totalSum: total,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
